@@ -44,7 +44,10 @@
     <Compile Include="Entity\FreeDbEntity.cs" />
     <Compile Include="Entity\FreeDbTableAttribute.cs" />
     <Compile Include="Factory\FreeParameterFactory.cs" />
+    <Compile Include="Factory\IFreeParameterFactory.cs" />
     <Compile Include="Interfaces\IFreeDbEntity.cs" />
+    <Compile Include="Interfaces\IFreeDbParameter.cs" />
+    <Compile Include="Interfaces\IFreeParameter.cs" />
     <Compile Include="Parameter\FreeDbParameterAttribute.cs" />
     <Compile Include="Parameter\FreeParameter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

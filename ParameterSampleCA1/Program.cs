@@ -15,11 +15,11 @@ namespace ParameterSampleCA1
         static void Main(string[] args)
         {
             Person p = new Person { Name = "Levent" };
-            List<FreeParameter> prms = FreeParameterFactory.Instance.GenerateFrom(p);
+            List<IFreeParameter> prms = FreeParameterFactory.Instance.GenerateFrom(p);
 
             foreach (var item in prms)
             {
-                Console.WriteLine($"{item.FullName}-{item.DbType}-{item.Direction}-{item.Value}");
+                Console.WriteLine($"ParameterName: {item.FullName} - Db Type: {item.DbType} - Parameter Direction: {item.Direction} - Value: {item.Value ?? "NULL"}");
             }
 
             Console.ReadKey();
@@ -29,7 +29,7 @@ namespace ParameterSampleCA1
     [FreeDbTable(Name = "PERSON", SchemaName = "MST")]
     public class Person : FreeDbEntity
     {
-        [FreeDbParameter(Name = "PID", DbType = System.Data.DbType.Int32, Direction = System.Data.ParameterDirection.Input, IsGeneratedByDb = true)]
+        [FreeDbParameter(Name = "PID", DbType = System.Data.DbType.Int32, IsGeneratedByDb = true)]
         public int Id { get; set; }
 
         [FreeDbParameter(Name = "PERSONNAME", DbType = System.Data.DbType.String)]

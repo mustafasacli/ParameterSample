@@ -1,11 +1,12 @@
-﻿using System;
+﻿using FreeLibrary.Interfaces;
+using System;
 using System.Data;
 
 namespace FreeLibrary.Parameter
 {
     [AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = false)]
     [System.Diagnostics.DebuggerDisplay("{Name} - {ParameterPrefix} - {DbType} - {Direction} - {IsGeneratedByDb}")]
-    public class FreeDbParameterAttribute : Attribute
+    public class FreeDbParameterAttribute : Attribute, IFreeDbParameter
     {
         public string Name { get; set; }
 
